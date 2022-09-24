@@ -29,7 +29,6 @@ case "$op" in
   catalog)  /usr/bin/journalctl --update-catalog ;;
   hwdb)     /usr/bin/systemd-hwdb --usr update ;;
   update)   touch -c /usr ;;
-  sysusers) /usr/bin/systemd-sysusers ;;
   tmpfiles) /usr/bin/systemd-tmpfiles --create ;;
 
   daemon-reload) systemd_live; /usr/bin/systemctl daemon-reload ;;
