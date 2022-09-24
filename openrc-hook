@@ -33,11 +33,11 @@ each_conf() {
 op="$1"; shift
 
 case $op in
-  sysctl)   openrc_live; each_conf /usr/bin/sysctl -q -p ;;
-  binfmt)   openrc_live; each_conf /usr/lib/openrc/sh/binfmt.sh ;;
-  reexec) openrc_live; /usr/bin/openrc-shutdown -R ;;
+  sysctl)   openrc_live; each_conf /usr/sbin/sysctl -q -p ;;
+  binfmt)   openrc_live; each_conf /usr/libexec/openrc/rc/sh/binfmt.sh ;;
+  reexec) openrc_live; /usr/sbin/openrc-shutdown -R ;;
     # For use by other packages
-  reload)        openrc_live; /usr/bin/rc-service "$@" reload ;;
+  reload)        openrc_live; /usr/sbin/rc-service "$@" reload ;;
   add) svc_add_help ;;
   del) svc_del_help ;;
   *) echo >&2 "  Invalid operation '$op'"; exit 1 ;;
